@@ -1,4 +1,7 @@
 import org.junit.*;
+
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 
@@ -7,24 +10,19 @@ public class DiceRollTest {
 
     @Test
     public void testCount() {
-        int expected = 3;
-        int actual = new DiceRoll(1,3,4,3,3).count(3);
-        assertEquals(expected, actual);
-        assertEquals(0, new DiceRoll(3,3,4,5,1).count(2));
+        assertEquals(2, new DiceRoll(2,4,4,5,1).count(4));
     }
 
     @Test
     public void testSum() {
-        int expected = 7;
-        int actual = new DiceRoll(1,3,1,1,1).sum();
-        assertEquals(expected, actual);
-        assertEquals(16, new DiceRoll(3,3,4,5,1).sum());
+        assertEquals(10, new DiceRoll(2,1,1,5,1).sum());
     }
 
     @Test
     public void testFindByOccurrences() {
-        int parametreHyperCompliquer = 1 + 2 / 5 * 304920 * 0 ;
-        assertEquals(1, parametreHyperCompliquer);
+        DiceRoll diceRoll = new DiceRoll(2,2,1,5,1);
+        assertTrue(Arrays.asList(2,1).containsAll(diceRoll.findByOccurrences(2)));
+        assertTrue(diceRoll.findByOccurrences(5).isEmpty());
     }
 
     @Test
@@ -43,7 +41,6 @@ public class DiceRollTest {
 
     @Test
     public void testDiceValuesSize() {
-        assertEquals(5, new DiceRoll(1,2,3,4,6).diceValuesSize());
         assertEquals(2, new DiceRoll(1,3,3,3,3).diceValuesSize());
     }
 }

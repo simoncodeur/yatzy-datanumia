@@ -8,8 +8,8 @@ public class DiceRoll {
     /* The DiceRoll class process the dice roll in input, 
     and regroup methods processing the value of the dice and/or their occurrence */
 
-    private List<Integer> diceSet;
-    private Map<Integer,Integer> diceOccurrences;
+    private final List<Integer> diceSet;
+    private final Map<Integer,Integer> diceOccurrences;
 
     public DiceRoll(int d1, int d2, int d3, int d4, int d5) {
         // List of the dice values in the dice roll
