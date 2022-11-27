@@ -1,6 +1,7 @@
 import java.util.List;
 
 public class Yatzy {
+    /* This class allow the user to score a given roll in a given category */
 
     // The special scores of the Yatzy game
     private final static Integer SCORE_YATZY = 50;
